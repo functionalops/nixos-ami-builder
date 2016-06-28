@@ -1,0 +1,16 @@
+= NixOS AMI Builder
+
+== Purpose
+
+Tools to automate AMI building given a NixOS host configuration Nix expression
+for use with AWS Auto Scaling Groups (ASGs).
+
+== Status
+
+Incubation, experimental, not production ready.
+
+== License
+
+Licensed under BSD 3-clause license. See link:LICENSE.
+
+

@@ -1,0 +1,6 @@
+addons:
+  apt:
+    packages:
+    - asciidoc
+
+script: ./z/ci/verify

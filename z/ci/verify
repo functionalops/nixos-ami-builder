@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+
+function verify_docs() {
+  declare -a docs=(README.adoc LICENSE)
+  declare failed=false
+
+  for d in "${docs[@]}"; do
+    echo -ne "Verify asciidoc format of ${d}: "
+    if asciidoc --out-file=/dev/null "${d}"; then
+      echo "OK"
+    else
+      echo "FAIL"
+      failed=true
+    fi
+  done
+  if "${failed}"; then
+    return 1
+  fi
+}
+
+
+set -eu
+set -o pipefail
+asciidoc --version
+verify_docs
