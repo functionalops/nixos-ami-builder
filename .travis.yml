@@ -1,6 +1,13 @@
 addons:
   apt:
     packages:
-    - asciidoc
+      - gnupg2
+matrix:
+  include:
+    - os: linux
+      language: generic
+      sudo: required
+      dist: trusty
 
+before_install: ./z/setup/bootstrap
 script: ./z/ci/verify

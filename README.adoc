@@ -11,6 +11,6 @@ Incubation, experimental, not production ready.
 
 == License
 
-Licensed under BSD 3-clause license. See link:LICENSE.
+Licensed under BSD 3-clause license. See link:LICENSE[].
 
 
