@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
-
+#!/usr/bin/env nix-shell
+#!nix-shell ./deps.nix -i bash
 
 function verify_docs() {
   declare -a docs=(README.adoc LICENSE)
@@ -19,8 +19,16 @@ function verify_docs() {
   fi
 }
 
+function verify_haskell() {
+  nix-env --version
+
+  cabal build
+  cabal test
+  cabal bench
+}
 
 set -eu
 set -o pipefail
 asciidoc --version
 verify_docs
+verify_haskell

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+pushd /tmp
+wget https://nixos.org/nix/install
+wget https://nixos.org/nix/install.sig
+gpg2 --verify ./install.sig
+sudo sh ./install
+popd
